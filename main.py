@@ -7,6 +7,8 @@ from processamento_dados import (
     executar_com_multithreading
 )
 
+from dashboard import exibir_painel_eleitoral_matplotlib
+
 if __name__ == "__main__":
 
     if not os.path.exists(CAMINHO_DO_ARQUIVO_CSV):
@@ -43,6 +45,14 @@ if __name__ == "__main__":
     print(
         "Processamento concluído! "
         "Exibindo o Dashboard Matplotlib..."
+    )
+
+    exibir_painel_eleitoral_matplotlib(
+        media_geral = media_geral,
+        partido_vencedor = partido_vencedor,
+        cargo_vencedor = cargo_vencedor,
+        tempo_processos = tempo_processos,
+        tempo_threads = tempo_threads
     )
 
     
